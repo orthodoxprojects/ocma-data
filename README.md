@@ -1,5 +1,7 @@
 # ocma-data
 
+## Overview
+
 Python script that generates structured JSON data for each liturgical day of the year, including details about commemorations, fasting, moon phases, and other relevant information. The data will be hosted on GitHub Pages, making it accessible as a static API.
 
 ## Contributing
