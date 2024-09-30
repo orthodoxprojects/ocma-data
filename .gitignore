@@ -1,5 +1,11 @@
-output/
-venv/
+# Byte-compiled / optimized / DLL files
+utils/__pycache__/
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+
+# Environments
+.venv
