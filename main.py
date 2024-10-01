@@ -7,11 +7,11 @@ import json
 # Define the constants
 BUILD_PATH = './build/'
 PASCHALION = "paschalion"
-SUNDAY_LECTIONARY = "sunday_lectionary"
+SUNDAY_LECTIONARY = "sunday-lectionary"
 YEAR_START = 1924
 YEAR_END = 2100
 LANGUAGES = ["en", "el", "ro"]
-CALENDARS = ["old", "new"]
+CALENDARS = ["old-calendar", "new-calendar"]
 
 
 def main():
