@@ -1,6 +1,5 @@
 """Module providing a function generating JSON data for Calendar."""
 
-
 import os
 import json
 from utils.pascha import calculate_pascha
@@ -41,7 +40,7 @@ def main():
             }
 
             for paschalion_year in range(YEAR_START, YEAR_END):
-                pascha_date = calculate_pascha(paschalion_year)
+                pascha_date = calculate_pascha(paschalion_year, calendar_style)
                 paschalion_data[paschalion_year] = {
                     "pascha": pascha_date,
                 }
