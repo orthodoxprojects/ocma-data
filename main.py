@@ -3,6 +3,7 @@
 
 import os
 import json
+from utils.pascha import calculate_pascha
 
 # Define the constants
 BUILD_PATH = './build/'
@@ -26,7 +27,15 @@ def main():
         paschalion_filename = f'{YEAR_START}-{YEAR_END - 1}.json'
         paschalion_filepath = os.path.join(
             paschalion_path, paschalion_filename)
-        paschalion_data = {"language": language}
+        paschalion_data = {
+            "language": language,
+        }
+
+        for paschalion_year in range(YEAR_START, YEAR_END):
+            pascha_date = calculate_pascha(paschalion_year)
+            paschalion_data[paschalion_year] = {
+                "pascha": pascha_date,
+            }
 
         with open(paschalion_filepath, 'w', encoding="utf-8") as json_file:
             json.dump(paschalion_data, json_file, indent=4)
