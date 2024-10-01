@@ -21,7 +21,7 @@ def main():
 
     # Create a folder for each language
     for language in LANGUAGES:
-        # Create a folder for each calendar
+        # Create a folder for each calendar_style
         for calendar_style in CALENDAR_STYLES:
             calendar_style_path = os.path.join(
                 BUILD_PATH, language, calendar_style)
@@ -71,7 +71,7 @@ def main():
                     with open(sunday_lectionary_filepath, 'w', encoding="utf-8") as json_file:
                         json.dump(sunday_lectionary_data, json_file, indent=4)
 
-            # Create a folder for the sunday_lectionary
+            # Create a folder for the calendar
             calendar_path = os.path.join(
                 BUILD_PATH, language, calendar_style, CALENDAR)
             os.makedirs(calendar_path, exist_ok=True)
