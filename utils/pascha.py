@@ -1,5 +1,5 @@
 """
-Module providing a function that calculate the date of Pascha
+Module providing a function that calculate the date of Pascha 
 for the given year using the Jacques Oudin Algorithm.
 """
 
@@ -9,8 +9,8 @@ from utils.date_utils import modify_date
 
 def calculate_pascha(year: int, calendar_style: str):
     """
-    Function that calculate the date of Pascha
-    for the given year using the Jacques Oudin Algorithm.
+    Function that calculate the date of Pascha 
+    for the given year using the Jacques Oudin algorithm.
     """
 
     golden_number = year % 19

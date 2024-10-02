@@ -3,6 +3,8 @@
 import os
 import json
 from utils.pascha import calculate_pascha
+from utils.moon_phase import get_moon_phase
+from utils.check_date import is_valid_date
 
 # Define the constants
 BUILD_PATH = './build/'
@@ -85,7 +87,17 @@ def main():
                     calendar_filename = f'{calendar_month:02d}.json'
                     calendar_filepath = os.path.join(
                         calendar_year_path, calendar_filename)
-                    calendar_data = {"language": language}
+                    calendar_data = {
+                        "language": language,
+                    }
+
+                    for calendar_day in range(1, 32):
+                        if is_valid_date(calendar_year, calendar_month, calendar_day):
+                            calendar_data[f'{calendar_day:02d}'] = {
+                                "moon_phase": get_moon_phase(
+                                    calendar_year, calendar_month, calendar_day, calendar_style
+                                ),
+                            }
 
                     with open(calendar_filepath, 'w', encoding="utf-8") as json_file:
                         json.dump(calendar_data, json_file, indent=4)
